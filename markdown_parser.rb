@@ -1,6 +1,3 @@
-#Markdown_parser преобразует текст, написанный с помощью языка разметки Markdown в HTML-код.
-#
-# (c) Dostankius Sergeus
 
 require_relative "convert_list"
 require_relative "headers"
@@ -14,7 +11,6 @@ class MarkdownParser
     @converted_characters = []
   end
   
-  # Именование методов в стиле — что сделать? (преобразовать)
   def convert_to_html
     brake_file_to_chars
     replace_markdown_with_html
@@ -39,7 +35,7 @@ class MarkdownParser
         selected_text = SelectedText.new
         @converted_characters = selected_text.receiving_the_selected_text(@converted_characters)        
         list = List.new
-        @converted_characters = list.convert_list(@converted_characters)
+        @converted_characters = list.convert_list_or_sublist(@converted_characters)
       when "-", "="
         headers_first_or_second_level = HeadersFistOrSecondLevel.new
         @converted_characters = headers_first_or_second_level.headers_to_receive_first_or_second_level(@converted_characters)

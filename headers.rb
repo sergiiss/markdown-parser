@@ -1,7 +1,3 @@
-# Преобразование заголовков из Markdown в HTML
-#
-# (c) Dostankius Sergeus
-
 class Headers
 attr_reader :header_level, :header_text
 
