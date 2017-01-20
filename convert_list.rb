@@ -16,6 +16,7 @@ class List
       @completing_an_empty_string = $5
       list_view = $3
       empty_line = $5
+      
       select_the_type_of_list(list_view)
       select_the_end_of_the_list(empty_line)
         
