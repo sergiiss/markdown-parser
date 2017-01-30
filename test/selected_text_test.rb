@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'selected_text'
+require 'test_helper'
 
 class TestSelectedText < Minitest::Test
   def test_get_the_selected_text

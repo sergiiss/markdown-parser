@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'header_first_or_second_level'
+require 'test_helper'
 
 class TestHeaderFistOrSecondLevel < Minitest::Test
   def test_get_the_header_level_2
