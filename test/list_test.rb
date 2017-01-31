@@ -9,7 +9,8 @@ class TestList < Minitest::Test
        * подстрока 2
     * Строка 3
 
-Дальнейший текст.').convert_lists_or_sublists_in_html
+Дальнейший текст.')
+    result = list.convert_lists_or_sublists_in_html
     
     assert_equal '
 <ul>
@@ -21,6 +22,6 @@ class TestList < Minitest::Test
 <li>Строка 3</li>
 </ul>
 
-Дальнейший текст.', list
+Дальнейший текст.', result
   end
 end
