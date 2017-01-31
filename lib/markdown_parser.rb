@@ -1,7 +1,7 @@
-require_relative 'list'
-require_relative 'header'
-require_relative 'selected_text'
-require_relative 'header_first_or_second_level'
+require 'markdown-parser/list'
+require 'markdown-parser/header'
+require 'markdown-parser/selected_text'
+require 'markdown-parser/header_first_or_second_level'
 
 class MarkdownParser
   def convert_to_html
@@ -49,6 +49,3 @@ class MarkdownParser
     File.open(ARGV[1], "w") { |file| file.write converted_characters }
   end
 end
-
-parser = MarkdownParser.new
-parser.convert_to_html
