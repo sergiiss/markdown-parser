@@ -9,15 +9,15 @@ class MarkdownParser
     replace_markdown_text_in_html_text
     create_output_file
   end
-  
+
   private
-  
+
   attr_reader :converted_characters
-   
+
   def read_the_input_file
     @converted_characters = File.open(ARGV[0]) { |input_file| input_file.read }
   end
-    
+
   def replace_markdown_text_in_html_text
     convert_lists
     convert_headers
@@ -43,9 +43,9 @@ class MarkdownParser
   def convert_headers_first_or_second_level
     header_first_or_second_level = HeaderFistOrSecondLevel.new(converted_characters)
     @converted_characters = header_first_or_second_level.convert_headers_first_or_second_level_in_html
-  end  
-  
+  end
+
   def create_output_file
-    File.open(ARGV[1], "w") { |file| file.write converted_characters }
+    File.open(ARGV[1], 'w') { |file| file.write converted_characters }
   end
 end
