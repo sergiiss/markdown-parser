@@ -9,19 +9,24 @@ class TestList < Minitest::Test
        * подстрока 2
     * Строка 3
 
-Дальнейший текст.')
+Дальнейший текст.
+')
     result = list.convert_lists_or_sublists_in_html
-    
-    assert_equal '
-<ul>
-<li>Список 1</li>
-<li>Строка 2
-<ul><li>подстрока 1</li>
-<li>подстрока 2</li>
-</ul></li>
-<li>Строка 3</li>
-</ul>
+    expected_result =
+    <<~html
 
-Дальнейший текст.', result
+    <ul>
+    <li>Список 1</li>
+    <li>Строка 2
+    <ul><li>подстрока 1</li>
+    <li>подстрока 2</li>
+    </ul></li>
+    <li>Строка 3</li>
+    </ul>
+
+    Дальнейший текст.
+    html
+
+    assert_equal expected_result, result
   end
 end
