@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
+$LOAD_PATH.unshift File.expand_path('../../lib/markdown-parser', __FILE__)
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'markdown_parser'
+require 'cli'
 
-markdown_parser = MarkdownParser.new
-markdown_parser.convert_to_html
+cli = Cli.new
+cli.convert_file
