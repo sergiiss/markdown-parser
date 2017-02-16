@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TestList < Minitest::Test
   def test_get_a_list_in_html
-    list = List.new('
+    list = MarkdownParser::List.new('
     * Список 1
     * Строка 2
        * подстрока 1
