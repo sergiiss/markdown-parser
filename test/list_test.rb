@@ -13,7 +13,7 @@ class TestList < Minitest::Test
 ')
     result = list.convert_lists_or_sublists_in_html
     expected_result =
-    <<~html
+    <<~HTML
 
     <ul>
     <li>Список 1</li>
@@ -25,7 +25,7 @@ class TestList < Minitest::Test
     </ul>
 
     Дальнейший текст.
-    html
+    HTML
 
     assert_equal expected_result, result
   end
